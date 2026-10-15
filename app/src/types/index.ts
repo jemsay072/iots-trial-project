@@ -23,3 +23,50 @@ export interface Location {
     hours?: string;
     city?: string;
 }
+
+export interface ContactDetail {
+    title: string;
+    schedule: string[];
+}
+
+export interface PromoItem{
+    text: string;
+    isBold?: boolean;
+}
+
+export interface ContactData {
+  title: string;
+  description: string;
+  phoneNumber: string;
+  locationFinderText: string;
+  departments: ContactDetail[];
+  promoTitle: string;
+  promoDetails: PromoItem[];
+  careersText: string;
+  careersLinkText: string;
+  images: {
+    sideAgent: string;
+    bottomGroup: string;
+  };
+}
+
+export interface FooterLink {
+  label: string;
+  url: string;
+}
+
+export interface FooterCategory {
+  title: string;
+  links: FooterLink[];
+}
+
+export interface FooterData {
+  categories: FooterCategory[];
+  rateCheck: {
+    title: string;
+    description: string;
+    placeholder: string;
+    buttonText: string;
+  };
+}
+ 

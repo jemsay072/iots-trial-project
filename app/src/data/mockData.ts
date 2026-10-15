@@ -1,4 +1,4 @@
-import { Article, Location } from "../types";
+import { Article, Location, ContactData, FooterData } from "../types";
 
 export const mockArticlesDatabase: Article[] = [
   {
@@ -112,4 +112,72 @@ export const mockLocationsDatabase: Location[] = [
       city: "Melrose Park"
   }
 ];
+
+export const mockContactDatabase: ContactData = {
+  title: "Contact Us",
+  description: "Call us at 773-202-5060 or try our Location Finder to find the Insure on the Spot location nearest you!",
+  phoneNumber: "773-202-5060",
+  locationFinderText: "Location Finder",
+  departments: [
+    {
+      title: "Customer Service",
+      schedule: ["Monday- Friday 8am-8pm", "Saturday 8am-5pm"],
+    },
+    {
+      title: "Sales",
+      schedule: ["Monday- Friday 8am-8:30pm", "Saturday 8am-5:30pm"],
+    },
+  ],
+  promoTitle: "Get a Free Quote »",
+  promoDetails: [
+    { text: "Free $100 AMAZON Gift Card", isBold: true },
+    { text: "Refer Friends & Family" },
+    { text: "Mention Your Client Code" },
+    { text: "Policy starts- get a $100 gift card" },
+  ],
+  careersText: "Interested in working with a constantly growing and exciting organization in the Chicago land area?",
+  careersLinkText: "Click Here for Employment Opportunities!",
+  images: {
+    sideAgent: "/images/agent-side.png",
+    bottomGroup: "/images/group-banner.png",
+  },
+};
+
+export const footerData: FooterData = {
+  categories: [
+    {
+      title: "SERVICES",
+      links: [
+        { label: "Auto Insurance", url: "#auto" },
+        { label: "SR22 Insurance", url: "#sr22" },
+        { label: "Motorcycle Insurance", url: "#motorcycle" },
+        { label: "Commercial Vehicle Insurance", url: "#commercial" },
+      ],
+    },
+    {
+      title: "OUR LOCATIONS",
+      links: [
+        { label: "Corporate Headquarters", url: "#hq" },
+        { label: "Chicago, IL South Branch", url: "#chicago-south" },
+        { label: "Berwyn Office Location", url: "#berwyn" },
+        { label: "Melrose Park Facility", url: "#melrose-park" },
+      ],
+    },
+    {
+      title: "NEED ASSISTANCE?",
+      links: [
+        { label: "Easy Payment Options", url: "#payments" },
+        { label: "Report an Active Claim", url: "#claims" },
+        { label: "Frequently Asked Questions", url: "#faqs" },
+        { label: "Corporate Contact Desk", url: "#corporate" },
+      ],
+    },
+  ],
+  rateCheck: {
+    title: "INSTANT RATE CHECK",
+    description: "Calculate your local premium instantly. Trusted across Illinois since 1988.",
+    placeholder: "Enter Zip Code",
+    buttonText: "GET RATE ESTIMATE »",
+  },
+};
 
