@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   description: "Affordable auto and SR22 insurance options across Chicago, Illinois.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode; }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-white text-slate-900">
         <Header />
 
         <div className="flex-grow">{children}</div>
