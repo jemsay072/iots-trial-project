@@ -1,22 +1,19 @@
 import React from 'react';
 import { mockArticlesDatabase } from '../src/data/mockData';
 import ArticleCard from '@/app/src/components/ArticleCard';
+import { PageBanner } from '../src/components/PageBanner';
 
 export default function ArticleIndexPage() {
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50">
+      <PageBanner
+        title='Insurance Tips & Resources'
+        breadcrumbs={[{ label: 'Home', url: '/' }, { label: 'Blog & Tips' }]} 
+        description='Expert driving guidance and coverage optimization frameworks for Illinois motorists.'
+        marginY='mb-0'
+      />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        {/* Title Header Section Overhaul */}
-        <div className="mb-10 text-center md:text-left">
-          <h1 className="text-4xl font-black text-blue-900 tracking-tight sm:text-5xl">
-            Insurance Tips & Resources
-          </h1>
-          <p className="mt-3 text-sm text-slate-500 max-w-xl leading-relaxed">
-            Expert driving guidance and coverage optimization frameworks for Illinois motorists.
-          </p>
-        </div>
-
         {/* Workspace Layout Grid System */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <section className="lg:col-span-2 space-y-6">

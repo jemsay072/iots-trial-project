@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { mockArticlesDatabase } from "@/app/src/data/mockData";
+import { PageBanner } from "@/app/src/components/PageBanner";
 
 export const instant = false;
 
@@ -38,17 +39,18 @@ export default async function FullArticlePage({params}:PageProps) {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 py-12 text-left">
-            <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                {/* Breadcrumbs */}
-                <nav className="mb-6 text-xs text-slate-400 font-medium">
-                <Link href="/" className="hover:text-blue-600 transition">Home</Link>
-                <span className="mx-2">&gt;</span>
-                <Link href="/article" className="hover:text-blue-600 transition">Blog & Tips</Link>
-                <span className="mx-2">&gt;</span>
-                <span className="text-slate-600 truncate max-w-[200px] inline-block align-bottom">{article.title}</span>
-                </nav>
+        <div className="min-h-screen bg-slate-50 text-left">
+            {/* Breadcrumbs */}
+            <PageBanner
+                title={article.title}
+                breadcrumbs={[
+                    { label: 'Home', url: '/' }, 
+                    { label: 'Blog', url: '/article' }, 
+                    { label: 'Article' }
+                ]}
+                marginY="mb-0"
+            />
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
                 {/* Main Article Header */}
                 <article className="bg-white p-6 md:p-10 rounded-3xl border border-gray-200 shadow-sm space-y-6">
@@ -57,10 +59,6 @@ export default async function FullArticlePage({params}:PageProps) {
                         <span className="text-gray-300">&bull;</span>
                         <span className="text-slate-400 font-normal">{article.date}</span>
                     </div>
-
-                    <h1 className="text-3xl md:text-5xl font-black text-blue-900 tracking-tight leading-tight">
-                        {article.title}
-                    </h1>
 
                     {/* Reading experience */}
                     <div className="text-sm md:text-base text-slate-700 leading-relaxed space-y-6 pt-6 border-t border-gray-100 font-normal">

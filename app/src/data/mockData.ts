@@ -177,7 +177,7 @@ export const footerData: FooterData = {
     title: "INSTANT RATE CHECK",
     description: "Calculate your local premium instantly. Trusted across Illinois since 1988.",
     placeholder: "Enter Zip Code",
-    buttonText: "GET RATE ESTIMATE »",
+    buttonText: "GET RATE ESTIMATE",
   },
 };
 

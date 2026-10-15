@@ -1,5 +1,7 @@
 import React from "react";
 import { mockLocationsDatabase } from "../src/data/mockData";
+import Link from "next/link";
+
 
 const LocationPage = () => {
 
@@ -8,6 +10,12 @@ const LocationPage = () => {
             { /** Hero Section */ }
             <section className="bg-gradient-to-r from-blue-900 to-indigo-950 text-white py-16 px-4">
                 <div className="max-w-7xl mx-auto text-center space-y-6">
+                    <nav className="text-xs font-semibold tracking-wider uppercase text-sky-300 flex justify-center items-center gap-1.5 mb-2">
+                        <Link href={'/'} className="hover:text-white transition-colors">Home</Link>
+                        <span className="opacity-50">&gt;</span>
+                        <span className="text-white">Locations</span>
+                    </nav>
+
                     <h1 className="text-4xl md:text-5xl font-black tracking-tight">
                         Free Auto Insurance Quote in <span className="text-amber-400">2 Minutes!</span>
                     </h1>

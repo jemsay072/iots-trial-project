@@ -1,36 +1,28 @@
 import React from "react";
 import { mockContactDatabase } from "../src/data/mockData";
 
+import { PageBanner } from "../src/components/PageBanner";
+
 const ContactPage:React.FC = () => {
 
     const data = mockContactDatabase;
 
     return (
         <section className="bg-slate-50 min-h-screen text-slate-700 font-sans pb-16">
-            {/* 1. TOP HERO BANNER (Para consistent sa Locations page mo!) */}
-            <div className="bg-gradient-to-r stream-blue from-blue-900 to-sky-800 text-white py-12 px-6 mb-12 shadow-md">
-                <div className="max-w-5xl mx-auto space-y-2">
-                <p className="text-xs font-semibold tracking-wider uppercase text-sky-300">
-                    Home &gt; <span className="text-white">Contact Us</span>
-                </p>
-                <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">
-                    Get in Touch
-                </h1>
-                <p className="text-sm text-sky-100 max-w-xl">
-                    We are here to assist you with your auto insurance needs. Reach out to our teams today.
-                </p>
-                </div>
-            </div>
+            {/* Page Banner */}
+            <PageBanner 
+                title="Get in Touch" 
+                description="We are here to assist you with your auto insurance needs. Reach out to our teams today."
+                breadcrumbs={[{ label: 'Home', url: '/' }, { label: 'Contact Us' }]} 
+            />
 
-            <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
                 {/* Main Layout Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-16">
                 
                 {/* Left Columns - Details */}
                 <div className="md:col-span-2 space-y-10">
-                    
-                    {/* 1. Main Header Title & Info (Inalisan ng Box para mas malinis) */}
                     <div className="space-y-4">
                     <h2 className="text-3xl font-extrabold text-blue-900 tracking-tight">
                         {data.title}
@@ -43,8 +35,7 @@ const ContactPage:React.FC = () => {
                         to find the Insure on the Spot location nearest you!
                     </p>
                     </div>
-
-                    {/* 2. Department Schedules (Inalisan ng individual boxes; ginawang malinis na rows) */}
+                    
                     <div className="border-l-2 border-slate-200 pl-6 space-y-6">
                     {data.departments.map((dept, index) => (
                         <div key={index} className="space-y-1">
@@ -62,8 +53,7 @@ const ContactPage:React.FC = () => {
                         </div>
                     ))}
                     </div>
-
-                    {/* 3. Highlighted Promo Section (Ito na lang ang may container para stand-out) */}
+                    
                     <div className="bg-gradient-to-br from-amber-50/60 to-orange-50/60 p-6 rounded-2xl border border-amber-100 shadow-sm space-y-4">
                     <a 
                         href="#quote" 
@@ -82,8 +72,7 @@ const ContactPage:React.FC = () => {
                         ))}
                     </ul>
                     </div>
-
-                    {/* Careers Link (Inalisan din ng box; ginawang plain text footer helper) */}
+                    
                     <div className="text-sm pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <p className="text-slate-500">{data.careersText}</p>
                     <a href="#careers" className="font-bold text-blue-600 hover:text-blue-800 hover:underline transition-colors shrink-0">
@@ -92,7 +81,7 @@ const ContactPage:React.FC = () => {
                     </div>
                 </div>
 
-                {/* Right Column - Agent Image (Malinis na mockup style) */}
+                {/* Right Column - Agent Image */}
                 <div className="flex justify-center md:justify-end">
                     <div className="relative w-full max-w-[220px] bg-sky-50/50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center">
                     <div className="absolute top-2.5 left-3 flex gap-1">

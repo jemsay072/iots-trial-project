@@ -69,4 +69,18 @@ export interface FooterData {
     buttonText: string;
   };
 }
- 
+
+export interface BreadcrumbItem {
+    label: string;
+    url?: string;
+}
+
+export interface PageBannerProps {
+    title:string;
+    description?: string;
+    breadcrumbs:BreadcrumbItem[];
+    children?: React.ReactNode;
+    paddingY?: string;
+    marginY?: string;
+    maxContainerWidth?: string;
+}
