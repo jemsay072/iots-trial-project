@@ -1,4 +1,4 @@
-import { Article } from "../types";
+import { Article, Location } from "../types";
 
 export const mockArticlesDatabase: Article[] = [
   {
@@ -77,3 +77,39 @@ export const mockArticlesDatabase: Article[] = [
     ]
   }
 ];
+
+export const mockLocationsDatabase: Location[] = [
+  {
+      id: 1,
+      name: "Corporate Headquarters",
+      address: "5440 N Cumberland Ave, Chicago, IL 60656, United States",
+      phone: "(773) 202-5060",
+      hours: "Mon-Fri: 9:00 AM - 5:00 PM",
+      city: "Chicago"
+  },
+  {
+      id: 2,
+      name: "Chicago, IL South",
+      address: "8537 S Cicero Ave, Chicago, IL 60652, United States",
+      phone: "(773) 202-5060",
+      hours: "Mon-Fri: 9:00 AM - 5:00 PM",
+      city: "Chicago"
+  },
+  {
+      id: 3,
+      name: "Berwyn, IL",
+      address: "7001 W Roosevelt Rd, Berwyn, IL 60402, United States",
+      phone: "(708) 484-7400",
+      hours: "Mon-Fri: 9:00 AM - 5:00 PM",
+      city: "Berwyn"
+  },
+  {
+      id: 4,
+      name: "Melrose Park, IL",
+      address: "1907 N Mannheim Rd, Melrose Park, IL 60164, United States",
+      phone: "(708) 345-1000",
+      hours: "Mon-Fri: 9:00 AM - 5:00 PM",
+      city: "Melrose Park"
+  }
+];
+

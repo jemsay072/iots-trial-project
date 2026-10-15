@@ -20,6 +20,6 @@ export interface Location {
     name: string;
     address: string;
     phone: string;
-    hours: string;
-    city: string;
+    hours?: string;
+    city?: string;
 }
