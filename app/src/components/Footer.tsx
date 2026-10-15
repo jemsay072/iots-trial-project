@@ -2,51 +2,40 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { footerData } from '../data/mockData';
 
 export default function Footer() {
   return (
     <footer className="w-full bg-slate-900 text-white border-t-4 border-amber-500 mt-auto">
       {/* Main Structural Link Workspace */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 text-xs">
-        
-        {/* Column 1: Core Protection Offerings */}
-        <div className="space-y-4">
-          <h4 className="font-black text-sm uppercase tracking-wider text-amber-500">Services</h4>
-          <ul className="space-y-2.5 text-slate-400 font-medium">
-            <li><Link href="#" className="hover:text-white transition">Auto Insurance</Link></li>
-            <li><Link href="#" className="hover:text-white transition">SR22 Insurance</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Motorcycle Insurance</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Commercial Vehicle Insurance</Link></li>
-          </ul>
+
+        <div className='md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8'>
+          {
+            footerData.categories.map((cat, ind) => (
+              <div key={ind} className='space-y-4'>
+                <h4 className="font-black text-sm uppercase tracking-wider text-amber-500">
+                  { cat?.title }
+                </h4>
+                <ul className='space-y-2.5 text-slate-400 font-medium'>
+                  {cat.links.map((link, linkInd) => (
+                    <li key={linkInd}>
+                      <Link href={link.url} className="hover:text-white transition">
+                        { link.label }
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
 
-        {/* Column 2: Regional Branch Network links */}
-        <div className="space-y-4">
-          <h4 className="font-black text-sm uppercase tracking-wider text-amber-500">Our Locations</h4>
-          <ul className="space-y-2.5 text-slate-400 font-medium">
-            <li><Link href="/locations" className="hover:text-white transition">Corporate Headquarters</Link></li>
-            <li><Link href="/locations" className="hover:text-white transition">Chicago, IL South Branch</Link></li>
-            <li><Link href="/locations" className="hover:text-white transition">Berwyn Office Location</Link></li>
-            <li><Link href="/locations" className="hover:text-white transition">Melrose Park Facility</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Operational Support Links */}
-        <div className="space-y-4">
-          <h4 className="font-black text-sm uppercase tracking-wider text-amber-500">Need Assistance?</h4>
-          <ul className="space-y-2.5 text-slate-400 font-medium">
-            <li><Link href="#" className="hover:text-white transition">Easy Payment Options</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Report an Active Claim</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Frequently Asked Questions</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition">Corporate Contact Desk</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 4: Quick Conversion Quote Interaction */}
+        {/* Quick Conversion Quote Interaction */}
         <div className="space-y-4 bg-slate-950 p-5 rounded-2xl border border-slate-800">
-          <h4 className="font-black text-sm uppercase tracking-wider text-white">Instant Rate Check</h4>
+          <h4 className="font-black text-sm uppercase tracking-wider text-white">{ footerData.rateCheck.title }</h4>
           <p className="text-[11px] text-slate-400 leading-relaxed">
-            Calculate your local premium instantly. Trusted across Illinois since 1988.
+            { footerData.rateCheck.description }
           </p>
           <div className="space-y-2 pt-1">
             <input 
@@ -55,7 +44,7 @@ export default function Footer() {
               className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white placeholder-slate-500 text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 transition"
             />
             <button className="w-full bg-amber-500 hover:bg-amber-600 text-white font-black py-2.5 rounded-xl uppercase tracking-wider text-[10px] shadow transition">
-              Get Rate Estimate &raquo;
+              { footerData.rateCheck.buttonText } &raquo;
             </button>
           </div>
         </div>
