@@ -1,9 +1,26 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import { mockArticlesDatabase } from '../src/data/mockData';
 import ArticleCard from '@/app/src/components/ArticleCard';
 import { PageBanner } from '../src/components/PageBanner';
 
 export default function ArticleIndexPage() {
+
+  const [ currentPage, setCurrentPage ] = useState<number>(1);
+  const articlesPerPage = 3; // limit per page
+
+  // Slice array
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+
+  // Current Active View
+  const currentArticles = mockArticlesDatabase.slice(indexOfFirstArticle, indexOfLastArticle);
+
+  // Calculate if there are existing data for button visibility
+  const hasOlderArticles = indexOfLastArticle < mockArticlesDatabase.length;
+  const hasNewerArticles = currentPage > 1;
+
   return (
     <div className="min-h-screen bg-slate-50">
       <PageBanner
@@ -17,9 +34,28 @@ export default function ArticleIndexPage() {
         {/* Workspace Layout Grid System */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <section className="lg:col-span-2 space-y-6">
-            {mockArticlesDatabase.map((article) => (
+            {currentArticles.map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}
+            { /** Pagination Button */ }
+            <div className='flex flex-row-reverse justify-start items-center gap-4 mt-10 pt-6 border-t border-slate-200 w-full'>
+              {hasNewerArticles && (
+                <button
+                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                  className='bg-gradient-to-b from-white to-slate-50 hover:cursor-pointer hover:to-slate-100 text-[#0f4c81] font-bold text-sm px-5 py-2 rounded-md border border-slate-200 shadow-sm transition active:scale-95 flex items-center gap-1'
+                >
+                  &lt; Newer Articles
+                </button>
+              )}
+              {hasOlderArticles && (
+                <button
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                  className='bg-gradient-to-b from-white to-slate-50 hover:cursor-pointer hover:to-slate-100 text-[#0f4c81] font-bold text-sm px-5 py-2 rounded-md border border-slate-200 shadow-sm transition active:scale-95 flex items-center gap-1'
+                >
+                  Older Articles &gt;
+                </button>
+              )}
+            </div>
           </section>
 
           <aside className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm h-fit">
@@ -30,6 +66,7 @@ export default function ArticleIndexPage() {
             </a>
           </aside>
         </div>
+
       </main>
     </div>
   );

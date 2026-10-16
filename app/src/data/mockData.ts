@@ -75,7 +75,36 @@ export const mockArticlesDatabase: Article[] = [
         answer: "Yes, evaluating options ensures you capture the lowest available premium thresholds for your specific driving history profile."
       }
     ]
-  }
+  },
+  {
+    id: 2,
+    title: "How to File Car Insurance Claims in Chicago",
+    date: "July 2, 2026",
+    category: "Affordability",
+    excerpt: "Filing a car insurance claim can feel overwhelming, but understanding the process can help make it much easier. Whether you’re dealing with a minor fender-bender or a more serious accident, knowing how to navigate your car insurance claim can",
+    slug: "how-to-file-car-insurance-claims-in-chicago",
+    content: [
+      "1. Ensure Safety and Document the Scene: The first step in filing a car insurance claim is ensuring safety. After any accident, it’s important to check for injuries and call emergency services if needed. Once you’ve taken care of any injuries, you’ll want to take steps to protect yourself and gather evidence.",
+      "2. Notify Your Insurance Company and Initiate the Claim: Once you’re safe and have all the necessary documentation, it’s time to contact your insurer. In Illinois, it’s essential to inform your insurance company promptly about the accident, even if it wasn’t your fault.",
+      "3. Work with the Insurance Adjuster: The insurance adjuster will review the details of your claim to assess the extent of the damage and the costs involved. This step is critical, as it determines how much compensation you’ll receive for repairs or replacements.",
+      "4. Get an Estimate and Review the Settlement Offer: Once the investigation is complete, your insurance company will provide you with a settlement offer based on their findings. They may also ask for an official repair estimate from a body shop or give you the option of working with one of their preferred network shops.",
+      "5. Repair or Replace Your Car: Once the claim is settled, you can proceed with repairs or replacing your vehicle, depending on the severity of the damage. If your car is repairable, you’ll work with a repair shop to restore it to its pre-accident condition."
+    ],
+    faqs: [
+      {
+        question: "What’s the minimum auto insurance required in Illinois?",
+        answer: "Illinois law requires all drivers to carry $25,000 for bodily injury per person, $50,000 per accident, and $20,000 for property damage. This basic liability coverage can be increased for better protection. Learn more about Illinois minimum car insurance requirements."
+      },
+      {
+        question: "How long does it take to get a settlement after filing a car insurance claim in Chicago?",
+        answer: "The time it takes to settle a claim varies based on the complexity of the case, but most claims are settled within 30 days. If the claim involves significant damage or complex liability issues, it could take longer."
+      },
+      {
+        question: "Do I have to pay my deductible when filing a claim for a minor accident?",
+        answer: "Yes, you’ll need to pay your deductible when filing a claim, regardless of the accident’s severity. Your deductible is subtracted from your payout for repairs or vehicle replacement. For a minor accident, the repair costs might only slightly exceed the deductible."
+      }
+    ]
+  },
 ];
 
 export const mockLocationsDatabase: Location[] = [
